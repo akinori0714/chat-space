@@ -30,6 +30,7 @@ Things you may want to cover:
 |email|integer|null :false|
 |password|integer|null :false|
 ### Association
+- has_many :groups, thorugh: :group_user
 - has_many :chats
 - belongs_to :gruop
 
