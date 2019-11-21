@@ -24,11 +24,11 @@ Things you may want to cover:
 * ...
 
 # chat-spaceのDB設計
-## usersテーブル
+## userテーブル
 |Column|Type|Options|
 |------|----|-------|
-|email|string|null :false|
-|password|string|null :false|
+|email|integer|null :false|
+|password|integer|null :false|
 ### Association
 - has_many :chats
 - belongs_to :gruop
@@ -36,15 +36,17 @@ Things you may want to cover:
 ## chatテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null :false|
+|text|integer|null :false|
+|image|integer|null :false|
 ### Association
 -belongs_to :user
 -belongs_to :chat-group
 
-## chaat-groupテーブル
+## groupテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user|string|null: false|
+|user|integer|null :false|
+|chat|integer|null :false|
 ### Association
 -has_many :users
 -has_many :chats
@@ -53,7 +55,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
-|chat-group_id|integer|null: false, foreign_key: true|
+|chat_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :chat-group
 - belongs_to :user
+- belongs_to :chat
