@@ -1,29 +1,33 @@
 # chat-spaceのDB設計
-## userテーブル
+## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |email|string|null :false|
 |password|string|null :false|
 ### Association
 - has_many :groups, through: :group_users
-- has_many :users
 - has_many :chats
 
-## chatテーブル
+## chatsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|integer|null :false|
-|image|integer|null :false|
+|user|string||
+|text|text||
+|image|text||
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 ### Association
 -belongs_to :user
 -belongs_to :group
 
-## groupテーブル
+## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
+|group_name|text||
 ### Association
 -has_many :users, through: :group_users
 -has_many :group_users
+-has_many :chats
 
 ## group_userテーブル
 |Column|Type|Options|
