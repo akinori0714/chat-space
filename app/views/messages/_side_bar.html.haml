@@ -1,0 +1,13 @@
+.chat-side
+  .side-header
+    .side-header__box
+      %p.side-header__box__user-name Aki
+      %ul.side-header__box__menu
+        = link_to "#", class: "side-header__box__menu__new-group" do
+          = icon('fas', 'edit')
+        = link_to "#", class: "side-header__box__menu__edit-user" do
+          = icon('fas', 'cog')
+  .groups
+    .group
+      %p.group__group-name team aki
+      %p.group__latest-message よろしくお願いします

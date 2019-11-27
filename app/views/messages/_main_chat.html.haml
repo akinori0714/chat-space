@@ -1,0 +1,20 @@
+.main-chat
+  .main-header
+    .main-header__left-box
+      %h2.main-header__left-box__current-group team Aki
+      %ul.main-header__left-box__member-list Member aki
+    = link_to 'Edit',"#", class: "main-header__edit-btn"
+  .messages
+    .message
+      .message__upper-info
+        %p.message__upper-info__talker Aki
+        %p.message__upper-info__date 2019/11/26
+      %p.message__text bbbbbbbbb
+  .form
+    %form
+      %input.form__message
+        .form__mask
+          %label.form__mask__image
+            = icon('fa','image',class: 'icon')
+            %input.hidden{type: 'file'}
+      %input.form__submit{type: 'submit', value: 'Send'}
