@@ -10,12 +10,6 @@
     = link_to 'Edit',edit_group_path(@group), class: "main-header__edit-btn"
   .messages
     = render @messages
-    -# .message
-    -#   .upper-message
-    -#     %p.upper-message__user-name
-    -#     %p.upper-message__date
-    -#   .lower-message 
-    -#     %p.lower-message__content 
   .form
     = form_for [@group, @message] do |f|
       = f.text_field :content, class: 'form__message', placeholder: 'type a message'
