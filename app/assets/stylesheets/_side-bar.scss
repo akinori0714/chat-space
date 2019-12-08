@@ -1,5 +1,6 @@
 .wrapper{
   display: flex;
+  box-sizing: border-box;
 }
 .chat-side{
   width: 300px;
@@ -18,7 +19,13 @@
     display: flex;
     &__menu{
       display: flex;
+      &__new-group{
+        margin-right: 5px;
+      }
     }
+  }
+  .icon{
+    color: #ffffff;
   }
 }
 .groups{
@@ -29,12 +36,14 @@
   box-sizing: border-box;
   .group{
     margin-bottom: 40px;
-    &__group-name{
+    &__name{
+      color: #ffffff;
       font-size: 15px;
       margin-bottom: 5px;
     }
-    &__latest-message{
+    &__message{
       font-size: 11px;
+      color: #ffffff;
     }
   }
 }
